@@ -2,7 +2,7 @@ from flask import Flask, Response, jsonify, request
 from flask_cors import CORS
 from sqlalchemy import create_engine, text, bindparam
 
-connection_string = "mysql+pymysql://flowers:123456@192.168.200.109:3306/flowers"
+connection_string = "mysql+pymysql://r3df:12345@192.168.0.4:3306/r3dfactory-admin"
 engine = create_engine(connection_string, echo=True)
 
 
@@ -28,11 +28,11 @@ def add_product():
     if request.method == "POST":
         form = request.form
         with engine.connect() as connection:
-            query = text("INSERT INTO products (name, description, price, photo) VALUES (:name, :description, :price, :photo) RETURNING *")
+            query = text("INSERT INTO products (name, description, price, image) VALUES (:name, :description, :price, :image) RETURNING *")
             query = query.bindparams(bindparam("name", form.get("name")))
             query = query.bindparams(bindparam("description", form.get("description")))
             query = query.bindparams(bindparam("price", form.get("price")))
-            query = query.bindparams(bindparam("photo", form.get("image")))
+            query = query.bindparams(bindparam("image", form.get("image")))
             result = connection.execute(query)
             connection.commit()
             return jsonify(result.fetchone()._asdict())
@@ -58,11 +58,11 @@ def product(id: int):
     if request.method == "PUT":
         form = request.form
         with engine.connect() as connection:
-            query = text("UPDATE products SET name = :name, description = :description, price = :price, photo = :photo WHERE id = :id")
+            query = text("UPDATE products SET name = :name, description = :description, price = :price, image = :image WHERE id = :id")
             query = query.bindparams(bindparam("name", form.get("name")))
             query = query.bindparams(bindparam("description", form.get("description")))
             query = query.bindparams(bindparam("price", form.get("price")))
-            query = query.bindparams(bindparam("photo", form.get("image")))
+            query = query.bindparams(bindparam("image", form.get("image")))
             query = query.bindparams(bindparam("id", id))
             connection.execute(query)
             connection.commit()

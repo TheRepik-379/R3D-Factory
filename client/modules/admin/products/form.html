@@ -10,11 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link href="css/main.css" rel="stylesheet">
-    <script src="modules/products/js/products.js"></script>
-</head>
+    <link href="/client/css/main.css" rel="stylesheet">
 
-<!--Навигационная панель-->
+</head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -23,17 +21,14 @@
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Переключатель навигации">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">R3DFactory</a>
+            <a class="navbar-brand" href="/client/modules/admin/products/index.html">R3DFactory</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        <a class="nav-link active" aria-current="page" href="/client/index.html">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ссылка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Отключенная</a>
+                        <a class="nav-link" href="/client/modules/products/index.html">Продукты</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -43,39 +38,31 @@
             </div>
         </div>
     </nav>
-</body>
-
-<!--Товары-->
-
-<body>
     <div class="container mt-2" style="min-height: 100%;">
         <div>
-            <form action="http://localhost:8000/api/product" method="POST">
+            <form id="product_form">
                 <div class="form-group">
-                  <label for="name">Название</label>
-                  <input name="name" type="text" class="form-control" id="name" placeholder="Название">
+                    <label for="name">Название</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Название">
                 </div>
                 <div class="form-group">
                     <label for="description">Описание</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="">
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Описание продукта">
                 </div>
                 <div class="form-group">
                     <label for="image">Картинка</label>
-                    <input name="image" type="text" class="form-control" id="image" placeholder="картинка / URL картинки">
+                    <input name="image" type="text" class="form-control" id="image"
+                        placeholder="https://static.example.com/img.png">
                 </div>
                 <div class="form-group">
                     <label for="price">Цена</label>
-                    <input name="price" type="number" class="form-control" id="price" placeholder="1000000">
+                    <input name="price" type="number" class="form-control" id="price" placeholder="Цена">
                 </div>
-                <input type="submit" class="btn btn-success mt-2">
-              </form>
+
+            </form>
+            <button id="_button" class="btn btn-success mt-2">Редактировать</button>
         </div>
     </div>
-</body>
-
-<!--Описание-->
-
-<body1>
     <footer class="footer bg-body-tertiary">
         <div class="container p-4">
             <div class="d-flex flex-column">
@@ -86,6 +73,8 @@
             </div>
         </div>
     </footer>
-</body1>
+</body>
+
+<script src="/client/modules/admin/products/js/product_form.js"></script>
 
 </html>

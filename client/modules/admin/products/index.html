@@ -11,10 +11,8 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link href="css/main.css" rel="stylesheet">
-    <script src="modules/products/js/products.js"></script>
+    <script src="/client/modules/admin/products/js/products.js"></script>
 </head>
-
-<!--Навигационная панель-->
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -23,17 +21,14 @@
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Переключатель навигации">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">R3DFactory</a>
+            <a class="navbar-brand" href="/client/modules/admin/products/index.html">R3DFactory</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        <a class="nav-link active" aria-current="page" href="/client/index.html">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ссылка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Отключенная</a>
+                        <a class="nav-link" href="/client/modules/products/index.html">Продукты</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -43,15 +38,10 @@
             </div>
         </div>
     </nav>
-</body>
-
-<!--Товары-->
-
-<body>
     <div class="container mt-2" style="min-height: 100%;">
         <div>
             <div class="text-end">
-                <a class="btn btn-success" href="/modules/admin/products/form.html">Добавить</a>
+                <a class="btn btn-success" href="/client/modules/admin/products/form.html">Добавить</a>
             </div>
 
             <table class="table table-striped">
@@ -69,15 +59,8 @@
                     <!--Здесь будут продукты-->
                 </tbody>
             </table>
-
-
         </div>
     </div>
-</body>
-
-<!--Описание-->
-
-<body1>
     <footer class="footer bg-body-tertiary">
         <div class="container p-4">
             <div class="d-flex flex-column">
@@ -88,6 +71,6 @@
             </div>
         </div>
     </footer>
-</body1>
+</body>
 
 </html>

@@ -32,7 +32,7 @@ async function render_products() {
         product = product.replace("{НАЗВАНИЕ}", element.name)
         product = product.replace("{ОПИСАНИЕ}", element.description)
         product = product.replace("{ЦЕНА}", element.price)
-        product = product.replace("{КАРТИНКА}", element.photo)
+        product = product.replace("{КАРТИНКА}", element.image)
         container.innerHTML += product
     })
 }
